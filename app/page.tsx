@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import { BatchEnquiryFloat } from "@/components/BatchEnquiryFloat";
 import { BlogCard } from "@/components/BlogCard";
 import { Button } from "@/components/Button";
-import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { HomeHero } from "@/components/HomeHero";
 import { Marquee } from "@/components/Marquee";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -28,8 +27,6 @@ export default function HomePage() {
   return (
     <>
       <main className="page-main" id="main-content">
-        <meta name="google-site-verification" content="WMudnjt19zuze38gZWjZNmNQduOZ5UUSJE_3ITFIxWk" />
-      <LocalBusinessJsonLd />
       <HomeHero />
 
       <Marquee accessibleLabel={SITE.shortDescription} items={SITE.home.marquee} />

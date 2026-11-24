@@ -20,7 +20,11 @@ export function createPageMetadata({
   publishedTime,
   section,
 }: PageMetadataInput): Metadata {
-  const fullTitle = `${title} | ${SITE.name}`;
+  const fullTitle = title.startsWith(SITE.name)
+    ? title
+    : path === "/"
+    ? `${SITE.name} — ${title}`
+    : `${title} | ${SITE.name}`;
   const pageUrl = SITE.origin ? new URL(path, SITE.origin).toString() : undefined;
   const imageUrl = SITE.origin ? new URL("/og-image", SITE.origin).toString() : undefined;
   const commonOpenGraph = {
@@ -57,6 +61,27 @@ export function createPageMetadata({
     ...(SITE.origin ? { metadataBase: new URL(SITE.origin) } : {}),
     title: { absolute: fullTitle },
     description,
+    keywords: [
+      "Zorvaxel",
+      "Zorvaxel Chennai",
+      "Zorvaxel serum",
+      "Zorvaxel lab",
+      "Zorvaxel private label",
+      "private label serum manufacturer",
+      "contract filling Chennai",
+      "small batch cosmetic manufacturing",
+      "serum packaging India",
+      "custom serum packaging",
+      "cleanroom cosmetic manufacturing Chennai",
+    ],
+    applicationName: SITE.name,
+    authors: [{ name: `${SITE.name} Technical Team`, url: SITE.origin }],
+    creator: SITE.name,
+    publisher: SITE.name,
+    category: "Cosmetics Manufacturing",
+    verification: {
+      google: "WMudnjt19zuze38gZWjZNmNQduOZ5UUSJE_3ITFIxWk",
+    },
     ...(pageUrl ? { alternates: { canonical: pageUrl } } : {}),
     robots: {
       index: true,

@@ -141,6 +141,7 @@ export function HomeHero() {
             <p className="eyebrow home-hero__eyebrow">{SITE.home.hero.label}</p>
 
             <h1 className="home-hero__title" id="home-title">
+              <span className="sr-only">Zorvaxel — </span>
               Your first serum batch,
               <br />
               without the{" "}

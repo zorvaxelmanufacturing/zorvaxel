@@ -3,8 +3,8 @@ import { SITE } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${SITE.name} — Serum Formulation & Packaging`,
-    short_name: SITE.name,
+    name: "Zorvaxel — Private Label Serum Formulation & Packaging",
+    short_name: "Zorvaxel",
     description: SITE.shortDescription,
     start_url: "/",
     display: "standalone",

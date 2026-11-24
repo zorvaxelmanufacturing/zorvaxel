@@ -1,10 +1,11 @@
 const configuredOrigin =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
   (process.env.NODE_ENV === "production" ? "https://zorvaxel.com" : undefined) ||
-  (process.env.RENDER_EXTERNAL_URL ? process.env.RENDER_EXTERNAL_URL.trim() : undefined);
+  (process.env.RENDER_EXTERNAL_URL ? process.env.RENDER_EXTERNAL_URL.trim() : undefined) ||
+  "https://zorvaxel.com";
 
-function resolvePublicOrigin(value: string | undefined): string | null {
-  if (!value) return null;
+function resolvePublicOrigin(value: string | undefined): string {
+  if (!value) return "https://zorvaxel.com";
   try {
     const url = new URL(value);
     if (
@@ -15,11 +16,11 @@ function resolvePublicOrigin(value: string | undefined): string | null {
       url.search ||
       url.hash
     ) {
-      return null;
+      return "https://zorvaxel.com";
     }
     return url.origin;
   } catch {
-    return null;
+    return "https://zorvaxel.com";
   }
 }
 
@@ -35,30 +36,30 @@ export const SITE = {
   locale: "en_IN",
   seo: {
     home: {
-      title: "Private label serum manufacturer in Chennai",
-      description: "Ready-formula serums filled, labelled and packed under your brand. No MOQ on most services. For founders, doctors and growing brands.",
+      title: "Zorvaxel — Private Label Serum Manufacturer & Contract Filling in Chennai",
+      description: "Zorvaxel is a private label serum manufacturer and contract filling laboratory in Chennai. Ready formulas, cleanroom filling, and custom packaging with no MOQ.",
     },
     services: {
-      title: "Serum branding and filling services — no MOQ",
-      description: "Ready formulas, contract filling, custom packaging, label design and stamping for serums. Start without a minimum order on most services.",
+      title: "Serum Branding, Filling & Packaging Services — No MOQ",
+      description: "Zorvaxel provides ready serum formulas, cleanroom contract filling, custom dropper bottles, label design, and foil stamping in Chennai with no MOQ.",
     },
     about: {
-      title: "About Zorvaxel — Chennai serum lab",
-      description: "A small-batch serum filling and packaging partner in Chennai, working with brands, doctors and clinics at any batch size.",
+      title: "About Zorvaxel — Chennai Cleanroom Serum Lab",
+      description: "Learn about Zorvaxel, South India's small-batch serum filling and private label laboratory in Chennai, working with founders, doctors, and clinics at any batch size.",
     },
     blog: {
-      title: "Serum packaging and brand notes",
-      description: "Plain-English notes on launching a serum brand: private label, contract filling, packaging and labels.",
+      title: "Founder Notes — Serum Packaging & Formulations",
+      description: "Practical notes from the Zorvaxel technical team on launching a serum brand: private label formulation, cleanroom filling, packaging, and CDSCO compliance.",
     },
     contact: {
-      title: "Contact — serum manufacturing enquiry",
-      description: "Send a brief about your formula, quantity and packaging needs. We reply within one working day.",
+      title: "Contact Zorvaxel — Serum Manufacturing & Pilot Batch Enquiry",
+      description: "Contact the Zorvaxel laboratory in Chennai for serum formulations, contract filling quotes, and small-batch pilot runs. Direct lab reply within 24 hours.",
     },
     notFound: {
       title: "Page not found",
-      description: "This page could not be found. Return to the serum manufacturing home page.",
+      description: "This page could not be found. Return to the Zorvaxel serum manufacturing home page.",
     },
-    socialImageAlt: "A calm editorial illustration for a small-batch serum manufacturer in Chennai.",
+    socialImageAlt: "Zorvaxel small-batch serum manufacturing and cleanroom filling laboratory in Chennai.",
   },
   navigation: [
     { label: "Home", href: "/" },
@@ -120,20 +121,21 @@ export const SITE = {
   },
   home: {
     hero: {
-      label: "PRIVATE LABEL SERUM MANUFACTURER · CHENNAI",
+      label: "ZORVAXEL · PRIVATE LABEL SERUM MANUFACTURER · CHENNAI",
       title: "Your first serum batch, without the minimum\u2011order trap.",
       supporting:
-        "We supply ready-to-brand serum formulas, then fill, label and pack them for you. Start with the quantity you actually need — not the one a factory forces on you.",
+        "At Zorvaxel, we supply ready-to-brand serum formulas, then fill, label and pack them for you in Chennai. Start with the quantity you actually need — not the one a factory forces on you.",
       primaryAction: "Start your first batch",
       secondaryAction: "See how it works",
       spec: "30 ML · AMBER GLASS · DROPPER",
       panelNote: "01 / FIRST BATCH",
     },
     marquee: [
+      "ZORVAXEL CHENNAI",
       "NO MOQ",
       "READY FORMULAS",
-      "FILLING",
-      "LABELS",
+      "CLEANROOM FILLING",
+      "CUSTOM LABELS",
       "CARTONS",
     ],
     servicesHeading: "From ready formula to finished bottle — or just the part you need.",
@@ -165,13 +167,13 @@ export const SITE = {
     noMoq: {
       label: "SMALL BATCHES WELCOME",
       title:
-        "Many manufacturers set minimums in the thousands. We start at whatever you can afford to test.",
+        "Many manufacturers set minimums in the thousands. At Zorvaxel, we start at whatever you can afford to test.",
       action: "Talk to us about quantity",
     },
     journalHeading: "Notes for the first run.",
     journalLink: "All notes",
     closing: {
-      title: "Have a formula already? Want to use one of ours?",
+      title: "Have a formula already? Want to use one of Zorvaxel's ready serums?",
       action: "Start your first batch",
     },
     batchEnquiryFloat: {
