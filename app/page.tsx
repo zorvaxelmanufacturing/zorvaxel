@@ -28,6 +28,7 @@ export default function HomePage() {
   return (
     <>
       <main className="page-main" id="main-content">
+        <meta name="google-site-verification" content="WMudnjt19zuze38gZWjZNmNQduOZ5UUSJE_3ITFIxWk" />
       <LocalBusinessJsonLd />
       <HomeHero />
 
