@@ -1,7 +1,7 @@
 const configuredOrigin =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
-  (process.env.RENDER_EXTERNAL_URL ? process.env.RENDER_EXTERNAL_URL.trim() : undefined) ||
-  (process.env.NODE_ENV === "production" ? "https://zorvaxel.com" : undefined);
+  (process.env.NODE_ENV === "production" ? "https://zorvaxel.com" : undefined) ||
+  (process.env.RENDER_EXTERNAL_URL ? process.env.RENDER_EXTERNAL_URL.trim() : undefined);
 
 function resolvePublicOrigin(value: string | undefined): string | null {
   if (!value) return null;
